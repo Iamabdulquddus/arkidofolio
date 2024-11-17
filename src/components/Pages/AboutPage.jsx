@@ -10,19 +10,19 @@ import Spacing from '../Spacing';
 const funfaceData = [
   {
     title: 'Global Happy Clients',
-    factNumber: '40K',
+    factNumber: '250+',
   },
   {
     title: 'Project Completed',
-    factNumber: '50K',
+    factNumber: '400+',
   },
   {
     title: 'Team Members',
-    factNumber: '245',
+    factNumber: '10+',
   },
   {
     title: 'Digital products',
-    factNumber: '550',
+    factNumber: '15+',
   },
 ];
 
@@ -53,11 +53,7 @@ export default function AboutPage() {
             >
               <Spacing lg="30" md="20" />
               <p className="cs-m0">
-                This is the main factor that sets us apart from our competition
-                and allows us to deliver a specialist business consultancy
-                service. Our team applies its wide-ranging experience to
-                determining. Through our years of experience, we’ve also learned
-                that while each channel.
+                This is what sets ARKIDU apart. We’re more than a digital solutions provider—we’re your dedicated partner in navigating the digital landscape. Our team combines creative expertise and technical knowledge to deliver tailored solutions across design, development, and marketing. With experience across a diverse range of industries, we bring fresh perspectives and innovative ideas to each project. We’re here to support your growth, elevate your brand, and ensure every digital interaction makes an impact.
               </p>
               <Spacing lg="30" md="30" />
               <Div className="cs-separator cs-accent_bg"></Div>
@@ -97,7 +93,7 @@ export default function AboutPage() {
       <Div className="container">
         <FunFact
           title="Our fun fact"
-          subtitle="Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
+          subtitle="We've had the privilege of partnering with clients from all walks of life, bringing their visions to life and making a meaningful impact. With a wealth of completed projects and a passionate team of experts, we're ready to take on new challenges and continue delivering creative solutions!"
           data={funfaceData}
         />
       </Div>
@@ -126,18 +122,7 @@ export default function AboutPage() {
             >
               <Spacing lg="30" md="20" />
               <p className="cs-m0">
-                This is the main factor that sets us apart from our competition
-                and allows us to deliver a specialist business consultancy
-                service. Our team applies its wide-ranging experience to
-                determining. Through our years of experience, we’ve also learned
-                that while each channel.
-              </p>
-              <Spacing lg="15" md="15" />
-              <p className="cs-m0">
-                This is the main factor that sets us apart from our competition
-                and allows us to deliver a specialist business consultancy
-                service. Our team applies its wide-ranging experience to
-                determining.
+              Our team brings extensive experience and expertise to every project. At ARKIDU, we’re passionate about crafting tailored digital solutions that make a real difference. With a commitment to quality and innovation, we work closely with you to understand your needs and help you achieve your goals. Trust us to bring your vision to life with precision and creativity.
               </p>
               <Spacing lg="30" md="30" />
               <Div className="cs-separator cs-accent_bg"></Div>

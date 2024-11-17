@@ -21,14 +21,14 @@ const portfolioData = [
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_5.jpeg',
-    category: 'logo_design',
+    category: 'presentation_design',
   },
   {
     title: 'Colorful Art Work',
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_6.jpeg',
-    category: 'web_design',
+    category: 'web_dev',
   },
   {
     title: 'Colorful Art Work',
@@ -49,14 +49,14 @@ const portfolioData = [
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_9.jpeg',
-    category: 'web_design',
+    category: 'web_dev',
   },
   {
     title: 'Colorful Art Work',
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_10.jpeg',
-    category: 'logo_design',
+    category: 'presentation_design',
   },
   {
     title: 'Colorful Art Work',
@@ -70,32 +70,32 @@ const portfolioData = [
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_5.jpeg',
-    category: 'logo_design',
+    category: 'presentation_design',
   },
   {
     title: 'Colorful Art Work',
     subtitle: 'See Details',
     href: '/portfolio/portfolio-details',
     src: '/images/portfolio_6.jpeg',
-    category: 'web_design',
+    category: 'web_dev',
   },
 ];
 const categoryMenu = [
   {
-    title: 'Web Design',
-    category: 'web_design',
-  },
-  {
-    title: 'UI/UX Design',
-    category: 'ui_ux_design',
+    title: 'Web Development',
+    category: 'web_dev',
   },
   {
     title: 'Mobile Apps',
     category: 'mobile_apps',
   },
   {
-    title: 'Logo Design',
-    category: 'logo_design',
+    title: 'UI/UX Design',
+    category: 'ui_ux_design',
+  },
+  {
+    title: 'Presentation Design',
+    category: 'presentation_design',
   },
 ];
 

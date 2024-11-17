@@ -49,8 +49,8 @@ export default function ServicesPage() {
                 <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
                 <Div className='col-lg-3 col-sm-6'>
                   <Card
-                    title='React.js Development'
-                    link='/service/reactjs-development'
+                    title='Website Development'
+                    link='/service/web-development'
                     src='/images/service_2.jpeg'
                     alt='Service'
                   />
@@ -68,8 +68,8 @@ export default function ServicesPage() {
                 <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
                 <Div className='col-lg-3 col-sm-6'>
                   <Card
-                    title='Technology'
-                    link='/service/technology'
+                    title='Mobile App Development'
+                    link='/service/mobile-development'
                     src='/images/service_4.jpeg'
                     alt='Service'
                   />
@@ -79,8 +79,8 @@ export default function ServicesPage() {
                 <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
                 <Div className='col-lg-3 col-sm-6'>
                   <Card
-                    title='Consultancy'
-                    link='/service/consultancy'
+                    title='PowerPoint Presentation Design'
+                    link='/service/powerPoint-design'
                     src='/images/service_5.jpeg'
                     alt='Service'
                   />
@@ -89,8 +89,8 @@ export default function ServicesPage() {
                 <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
                 <Div className='col-lg-3 col-sm-6'>
                   <Card
-                    title='Creative Design'
-                    link='/service/creative-design'
+                    title='Graphic Designing'
+                    link='/service/graphic-design'
                     src='/images/service_6.jpeg'
                     alt='Service'
                   />
@@ -102,7 +102,7 @@ export default function ServicesPage() {
         </Div>
       </Div>
       <Spacing lg='150' md='80'/>
-      <Div className="container">
+      {/* <Div className="container">
         <SectionHeading
           title='Providing best <br/>pricing for client' 
           subtitle='Pricing & Packaging'
@@ -110,7 +110,7 @@ export default function ServicesPage() {
         <Spacing lg='85' md='40'/>
         <PricingTableList/>
       </Div>
-      <Spacing lg='125' md='55'/>
+      <Spacing lg='125' md='55'/> */}
       <TestimonialSlider/>
       <Spacing lg='150' md='80'/>
       <Div className="container">

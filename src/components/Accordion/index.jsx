@@ -3,29 +3,29 @@ import { useState } from 'react';
 import Div from '../Div';
 const accordionData = [
   {
-    question: 'Do you design illustration website?',
+    question: 'What services does ARKIDU offer?',
     answer:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesent voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui.',
+      'ARKIDU offers graphic design, app development (Flutter, FlutterFlow, React.js), software development, web development (WordPress, Elementor Pro), digital marketing, video creation, and PowerPoint presentation design.',
   },
   {
-    question: 'Do you provide design source file after finish work?',
+    question: 'How does ARKIDU ensure the quality of its projects?',
     answer:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesent voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui.',
+      'We follow a rigorous process with detailed planning, regular reviews, and thorough testing. Our team uses the latest tools and works closely with clients to meet and exceed expectations.',
   },
   {
-    question: 'How to provide project details and payments?',
+    question: 'Can ARKIDU help with digital marketing strategies?',
     answer:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesent voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui.',
+      'Yes, we offer SEO, social media marketing, PPC advertising, email marketing, and content creation to boost your online presence and drive results.',
   },
   {
-    question: 'Can you tell me please how to contact for project?',
+    question: 'What is the typical timeline for a web development project?',
     answer:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesent voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui.',
+      'A standard web development project takes 2 to 8 weeks, depending on complexity. We provide a detailed timeline during the initial consultation.',
   },
   {
-    question: 'Do you makes custom logo, icon etc?',
+    question: 'How can I get started with ARKADU for my project?',
     answer:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesent voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui.',
+      'Contact us through our website to schedule an initial consultation. We’ll discuss your requirements and create a customized plan to get started.',
   },
 ];
 

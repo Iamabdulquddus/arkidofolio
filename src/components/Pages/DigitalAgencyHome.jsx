@@ -13,61 +13,62 @@ import TimelineSlider from '../Slider/TimelineSlider';
 import TestimonialSlider from '../Slider/TestimonialSlider';
 import Cta from '../Cta';
 import LogoList from '../LogoList';
+import Accordion from '../Accordion'
 import PostList from '../Post/PostList';
 const heroSocialLinks = [
   {
-    name: 'Behance',
+    name: 'LinkedIn',
     links: '/',
   },
   {
-    name: 'Twitter',
+    name: 'Instagram',
     links: '/',
   },
 ];
 const funfaceData = [
   {
-    title: 'Digital products',
-    factNumber: '550',
-  },
-  {
-    title: 'Global happy clients',
-    factNumber: '40K',
-  },
-  {
-    title: 'Project completed',
-    factNumber: '50k',
-  },
-  {
-    title: 'Team members',
+    title: 'Global Happy Clients',
     factNumber: '250',
+  },
+  {
+    title: 'Project Completed',
+    factNumber: '400',
+  },
+  {
+    title: 'Team Members',
+    factNumber: '10',
+  },
+  {
+    title: 'Digital products',
+    factNumber: '15',
   },
 ];
 const serviceData1 = [
   {
     title: 'UI/UX Design',
-    href: '/service/service-details',
+    href: '/service/ui-ux-design',
   },
   {
-    title: 'Marketing',
-    href: '/service/service-details',
+    title: 'Graphic Design',
+    href: '/service/graphic-design',
   },
   {
-    title: 'Branding',
-    href: '/service/service-details',
+    title: 'PowerPoint Presentation Design',
+    href: '/service/powerPoint-design',
   },
 ];
 const serviceData2 = [
   {
-    title: 'SEO',
-    href: '/service/service-details',
+    title: 'Website Development',
+    href: '/service/web-development',
   },
   {
-    title: 'App design',
-    href: '/service/service-details',
+    title: 'Mobile App Development',
+    href: '/service/mobile-development',
   },
   {
-    title: 'React Developer',
-    href: '/service/service-details',
+    title: 'Digital Marketing',
+    href: '/service/digital-marketing',
   },
 ];
 const portfolioData = [
@@ -147,13 +148,13 @@ export default function DigitalAgencyHome() {
     <>
       {/* Start Hero Section */}
       <Hero4
-        title="We Are <span>A</span>rino <br />Digital Agency"
+        title="We Are <span>A</span>rkidu <br />Digital Agency"
         subtitle="We deliver best problem solving solution for our client and provide finest finishing product in present and upcoming future."
         scrollDownId="#service"
         socialLinksHeading="Follow Us"
         heroSocialLinks={heroSocialLinks}
-        phoneNumber="+044 546664"
-        email="info@arino.com"
+        phoneNumber="+923364223371"
+        email="info@arkidu.com"
       />
       {/* End Hero Section */}
 
@@ -186,7 +187,7 @@ export default function DigitalAgencyHome() {
       {/* End Moving Text Section */}
 
       {/* Start About Section */}
-      <Div className="cs-shape_wrap_4">
+      {/* <Div className="cs-shape_wrap_4">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Spacing lg="150" md="80" />
@@ -212,7 +213,7 @@ export default function DigitalAgencyHome() {
             </Div>
           </Div>
         </Div>
-      </Div>
+      </Div> */}
       {/* End About Section */}
 
       {/* Start Projects Section */}
@@ -266,7 +267,7 @@ export default function DigitalAgencyHome() {
       {/* End Projects Section */}
 
       {/* Start Awards Section */}
-      <Spacing lg="140" md="80" />
+      {/* <Spacing lg="140" md="80" />
       <Div className="container">
         <Div className="row">
           <Div className="col-xl-4">
@@ -282,7 +283,7 @@ export default function DigitalAgencyHome() {
           </Div>
         </Div>
       </Div>
-      <Spacing lg="145" md="80" />
+      <Spacing lg="145" md="80" /> */}
       {/* End Awards Section */}
 
       {/* Start Testimonial Section */}
@@ -290,7 +291,7 @@ export default function DigitalAgencyHome() {
       {/* End Testimonial Section */}
 
       {/* Start Blog Section */}
-      <Div className="cs-shape_wrap_4">
+      {/* <Div className="cs-shape_wrap_4">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Spacing lg="145" md="80" />
@@ -311,10 +312,12 @@ export default function DigitalAgencyHome() {
           </Div>
         </Div>
       </Div>
-      <Spacing lg="145" md="80" />
+      <Spacing lg="145" md="80" /> */}
       {/* End Blog Section */}
 
       {/* Start LogoList Section */}
+      
+      <Spacing lg="100" md="80" />
       <Div className="container">
         <SectionHeading
           title="Our reputed partner"
@@ -324,7 +327,27 @@ export default function DigitalAgencyHome() {
         <Spacing lg="70" md="45" />
         <LogoList />
       </Div>
-      <Spacing lg="150" md="80" />
+      <Spacing lg='150' md='80'/>
+      <Div className="container cs-shape_wrap_4">
+        <Div className="cs-shape_4"></Div>
+        <Div className="cs-shape_4"></Div>
+        <Div className="container">
+          <Div className="row">
+            <Div className="col-xl-5 col-lg-6">
+              <SectionHeading
+                title='Some pre questions and answers' 
+                subtitle='FAQ’s'
+              />
+              <Spacing lg='90' md='45'/>
+            </Div>
+            <Div className="col-lg-6 offset-xl-1">
+              <Accordion/>
+            </Div>
+          </Div>
+        </Div>
+      </Div>
+      <Spacing lg='150' md='80'/>
+    
       {/* End LogoList Section */}
 
       {/* Start CTA Section */}
