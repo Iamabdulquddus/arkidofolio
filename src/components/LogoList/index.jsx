@@ -3,25 +3,30 @@ import Div from '../Div';
 import './logolist.scss';
 const partnerLogos = [
   {
-    src: '/images/partner_1.svg',
+    src: '/images/clients_logos/Nestle-Logo-Background-PNG.png',
     alt: 'Partner',
   },
   {
-    src: '/images/partner_2.svg',
+    src: '/images/clients_logos/Next Level Solutions PNG LOGO (1).png',
     alt: 'Partner',
   },
   {
-    src: '/images/partner_3.svg',
+    src: '/images/clients_logos/Sysco-White-Logo-NO-TAG.png',
     alt: 'Partner',
   },
   {
-    src: '/images/partner_4.svg',
+    src: '/images/clients_logos/WWF-WHITE PNG LOGO.png',
     alt: 'Partner',
   },
   {
-    src: '/images/partner_5.svg',
+    src: '/images/clients_logos/ZBRA_BIG.D-33801285.png',
     alt: 'Partner',
   },
+  {
+    src: '/images/clients_logos/5elabs.png',
+    alt: 'Partner',
+  },
+
 ];
 
 export default function LogoList() {
@@ -29,7 +34,7 @@ export default function LogoList() {
     <Div className="cs-partner_logo_wrap">
       {partnerLogos.map((partnerLogo, index) => (
         <div className="cs-partner_logo" key={index}>
-          <img src={partnerLogo.src} alt={partnerLogo.alt} />
+          <img src={partnerLogo.src} alt={partnerLogo.alt} width={150} />
         </div>
       ))}
     </Div>
