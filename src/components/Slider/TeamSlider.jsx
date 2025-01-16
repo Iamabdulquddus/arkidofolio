@@ -6,8 +6,8 @@ import Team from '../Team';
 const teamData = [
   {
     memberImage: '/images/member_1.jpeg',
-    memberName: 'Melon Bulgery',
-    memberDesignation: 'Product Designer',
+    memberName: 'Sania Bilal',
+    memberDesignation: 'CEO',
     memberSocial: {
       linkedin: '/',
       twitter: '/',
@@ -17,8 +17,8 @@ const teamData = [
   },
   {
     memberImage: '/images/member_2.jpeg',
-    memberName: 'Olinaz Fushi',
-    memberDesignation: 'Product Designer',
+    memberName: 'Ahsan Ali',
+    memberDesignation: 'CTO',
     memberSocial: {
       linkedin: '/',
       twitter: '/',
@@ -26,21 +26,21 @@ const teamData = [
       facebook: '/',
     },
   },
-  {
-    memberImage: '/images/member_3.jpeg',
-    memberName: 'David Elone',
-    memberDesignation: 'React Developer',
-    memberSocial: {
-      linkedin: '/',
-      twitter: '/',
-      youtube: '/',
-      facebook: '/',
-    },
-  },
+  // {
+  //   memberImage: '/images/member_3.jpeg',
+  //   memberName: 'Sidra M',
+  //   memberDesignation: 'React Developer',
+  //   memberSocial: {
+  //     linkedin: '/',
+  //     twitter: '/',
+  //     youtube: '/',
+  //     facebook: '/',
+  //   },
+  // },
   {
     memberImage: '/images/member_4.jpeg',
-    memberName: 'Melina Opole',
-    memberDesignation: 'WP Developer',
+    memberName: 'Abdul Quddus',
+    memberDesignation: 'Product Manager',
     memberSocial: {
       linkedin: '/',
       twitter: '/',
@@ -48,17 +48,17 @@ const teamData = [
       facebook: '/',
     },
   },
-  {
-    memberImage: '/images/member_1.jpeg',
-    memberName: 'Melon Bulgery',
-    memberDesignation: 'Product Designer',
-    memberSocial: {
-      linkedin: '/',
-      twitter: '/',
-      youtube: '/',
-      facebook: '/',
-    },
-  },
+  // {
+  //   memberImage: '/images/member_1.jpeg',
+  //   memberName: 'Melon Bulgery',
+  //   memberDesignation: 'Product Designer',
+  //   memberSocial: {
+  //     linkedin: '/',
+  //     twitter: '/',
+  //     youtube: '/',
+  //     facebook: '/',
+  //   },
+  // },
 ];
 
 export default function TeamSlider() {
