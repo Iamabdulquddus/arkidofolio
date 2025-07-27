@@ -1,317 +1,412 @@
+import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { pageTitle } from '../../helper';
-import Cta from '../Cta';
-import PageHeading from '../PageHeading';
-import Portfolio from '../Portfolio';
-import Div from '../Div';
-import SectionHeading from '../SectionHeading';
-import Spacing from '../Spacing';
+
+// Tilt Shine Card Component
+const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
+  const cardRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    setMousePosition({ x, y });
+    
+    // Calculate tilt
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    cardRef.current.style.setProperty('--mouse-x', `${x}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${y}px`);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (cardRef.current) {
+      cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    }
+  };
+
+  const handleClick = () => {
+    if (hasDetails && onClick) {
+      onClick();
+    }
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      className="portfolio-card"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+      style={{
+        position: 'relative',
+        width: '100%',
+        aspectRatio: '1/1',
+        borderRadius: '16px',
+        overflow: 'hidden',
+        cursor: hasDetails ? 'pointer' : 'default',
+        transition: 'transform 0.1s ease-out',
+        transformStyle: 'preserve-3d',
+        '--mouse-x': '0px',
+        '--mouse-y': '0px',
+      }}
+    >
+      {/* Background Image */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: `url(${src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: isHovered ? 'brightness(0.8)' : 'brightness(0.9)',
+          transition: 'filter 0.3s ease',
+        }}
+      />
+      
+      {/* Shine Effect */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: isHovered 
+            ? `radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.3) 0%, transparent 50%)`
+            : 'transparent',
+          transition: 'background 0.3s ease',
+          pointerEvents: 'none',
+        }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
+        }}
+      />
+      
+      {/* Content */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '24px',
+          color: 'white',
+          transform: 'translateZ(50px)',
+        }}
+      >
+        <h3
+          style={{
+            fontSize: '1.25rem',
+            fontWeight: '600',
+            marginBottom: '8px',
+            textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+          }}
+        >
+          {title}
+        </h3>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontSize: '0.875rem',
+            opacity: 0.9,
+            textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+          }}
+        >
+          <span>{subtitle}</span>
+          {hasDetails && (
+            <Icon 
+              icon="bi:arrow-right" 
+              style={{
+                transition: 'transform 0.3s ease',
+                transform: isHovered ? 'translateX(4px)' : 'translateX(0px)',
+              }}
+            />
+          )}
+        </div>
+      </div>
+      
+      {/* Border Glow */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          borderRadius: '16px',
+          border: '1px solid rgba(255,255,255,0.1)',
+          boxShadow: isHovered 
+            ? '0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
+            : '0 4px 20px rgba(0,0,0,0.1)',
+          transition: 'box-shadow 0.3s ease',
+          pointerEvents: 'none',
+        }}
+      />
+    </div>
+  );
+};
+
+// Portfolio Data
 const portfolioData = [
   {
     id: 1,
-    title: 'Colorful Art Work',
+    title: 'E-Commerce Platform',
     subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_4.jpeg',
-    category: 'ui_ux_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-     
-    },
+    src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
+    category: 'website_development',
+    details: { description: 'A modern e-commerce platform with seamless user experience.' },
   },
   {
     id: 2,
-    title: 'Vound',
+    title: 'Mobile Banking App',
     subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/9.png',
-    category: 'presentation_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
+    src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=400&fit=crop',
+    category: 'mobile_app_designs',
+    details: { description: 'Secure and intuitive mobile banking application design.' },
   },
   {
     id: 3,
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_6.jpeg',
-    category: 'web_dev',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
+    title: 'Corporate Presentation',
+    subtitle: 'View',
+    src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=400&fit=crop',
+    category: 'presentation_designs',
   },
   {
     id: 4,
-    title: 'Wibulu',
+    title: 'Recipe E-Book',
     subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/wibulu.png',
-    category: 'mobile_apps',
-    details: {
-      description: "Are you passionate about stories? Do you love getting lost in worlds created by words? We're excited to introduce you to our new app in early access, where you can discover, read and share short stories in a dynamic and accessible way. Join us in this initial stage and be part of the evolution of our platform.",
-     
-    },
+    src: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
+    category: 'ebook_designs',
+    details: { description: 'Beautifully designed recipe collection with stunning visuals.' },
   },
-
   {
     id: 5,
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_8.jpeg',
-    category: 'ui_ux_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-     
-    },
+    title: 'Event Flyer',
+    subtitle: 'View',
+    src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop',
+    category: 'flyers_designs',
   },
   {
     id: 6,
-    title: 'Colorful Art Work',
+    title: 'Brand Identity Logo',
     subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_9.jpeg',
-    category: 'web_dev',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
+    src: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=400&fit=crop',
+    category: 'logo_designs',
+    details: { description: 'Modern logo design that captures brand essence perfectly.' },
   },
   {
     id: 7,
-    title: 'Barista Portfolio',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/1.png',
-    category: 'presentation_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
+    title: 'Professional Business Card',
+    subtitle: 'View',
+    src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=400&fit=crop',
+    category: 'business_card_designs',
   },
   {
     id: 8,
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_4.jpeg',
-    category: 'ui_ux_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
+    title: 'Gaming Thumbnail',
+    subtitle: 'View',
+    src: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
+    category: 'youtube_thumbnails',
   },
   {
     id: 9,
-    title: 'DFW Hair Care',
+    title: 'Dashboard Interface',
     subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/4.png',
-    category: 'presentation_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
-  },
-  {
-    id: 10,
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_6.jpeg',
-    category: 'web_dev',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
-  },
-  {
-    id: 11,
-    title: 'Social Media Posts',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/21.png',
-    category: 'graphic_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
-  },
-  {
-    id: 12,
-    title: 'Logo Desing',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/27.png',
-    category: 'graphic_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
-  },
-  {
-    id: 13,
-    title: 'Youtube Thumbnail Desing',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/19.png',
-    category: 'graphic_design',
-    details: {
-      description: 'A beautiful colorful artwork for a modern UI project.',
-      
-    },
-  },
-  {
-    id: 14,
-    title: 'Buzzwerl',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/buzzerl.png',
-    category: 'mobile_apps',
-    details: {
-      description: "Buzzwerl is the ultimate event creation and booking platform that simplifies your social and professional gatherings. With Buzzwerl, you can transform any occasion into an unforgettable experience.\nWhether you're looking to host a small intimate gathering, a large-scale corporate conference, or anything in between, Buzzwerl offers a comprehensive set of tools to help you plan, manage, and execute your event seamlessly. Our easy-to-use interface allows you to create an event, send out personalized invitations, manage RSVPs, and even book venues, caterers, and event planners in a few simple steps.\nFor event-goers, Buzzwerl provides a curated list of exciting events happening around you. Discover new experiences, book tickets instantly, and stay updated with real-time notifications. With our user-friendly calendar integration, you'll never miss an event again.",
-      
-    },
-  },
-  {
-    id: 15,
-    title: 'Tik Commerces',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/tiktok.png',
-    category: 'mobile_apps',
-    details: {
-      description: "This innovative mobile application combines the excitement of short-form video content with the convenience of integrated e-commerce. Users can create, share, and interact with viral videos showcasing products, while seamlessly purchasing items directly within the app. With features like product tagging, personalized recommendations, live shopping events, and social sharing, the platform offers a unique experience for both shoppers and content creators. By merging social engagement with a streamlined shopping experience, this app aims to revolutionize the way people discover and buy products online.",
-    },
-  },
-  {
-    id: 16,
-    title: 'OrderMate',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/tab.png',
-    category: 'mobile_apps',
-    details: {
-      description: "This mobile application is a comprehensive Point of Sale (POS) solution designed specifically for restaurants. It allows customers to place orders, customize their meals by adding or removing modifiers, and split the payment into multiple amounts for easier transactions. The app also features integrated cash and card payment options, providing flexibility for various payment methods. For restaurant staff, the app includes a Kitchen Display System (KDS) where all orders are displayed in real time, ensuring smooth communication between the front and back of the house. This efficient, user-friendly solution streamlines the ordering and payment process, enhancing both customer experience and operational efficiency.",
-    },
+    src: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=400&fit=crop',
+    category: 'uiux_design',
+    details: { description: 'Clean and intuitive dashboard design for data visualization.' },
   },
 ];
+
 const categoryMenu = [
-  {
-    title: 'Web Development',
-    category: 'web_dev',
-  },
-  {
-    title: 'Mobile Apps',
-    category: 'mobile_apps',
-  },
-  {
-    title: 'UI/UX Design',
-    category: 'ui_ux_design',
-  },
-  {
-    title: 'Graphic Design',
-    category: 'graphic_design',
-  },
-
-  {
-    title: 'Presentation Design',
-    category: 'presentation_design',
-  },
+  { title: 'Website Development', category: 'website_development' },
+  { title: 'Mobile App Designs', category: 'mobile_app_designs' },
+  { title: 'Presentation Designs', category: 'presentation_designs' },
+  { title: 'E-Book Designs', category: 'ebook_designs' },
+  { title: 'Flyers Designs', category: 'flyers_designs' },
+  { title: 'Logo Designs', category: 'logo_designs' },
+  { title: 'Business Card Designs', category: 'business_card_designs' },
+  { title: 'Youtube Thumbnails', category: 'youtube_thumbnails' },
+  { title: 'UIUX Design', category: 'uiux_design' },
 ];
 
-export default function PortfolioPage() {
-  pageTitle('Portfolio');
-  const [active, setActive] = useState('all');
-  const [itemShow, setItemShow] = useState(7);
+// Main Portfolio Component
+export default function TiltShinePortfolio() {
+  const [active, setActive] = useState('website_development');
+  const [itemShow, setItemShow] = useState(9);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const handleCardClick = (item) => {
+    if (item.details) {
+      // Navigate to details page
+      window.location.href = `/portfolio/${item.id}`;
+    }
+  };
+
+  const filteredItems = portfolioData.filter(item => item.category === active);
 
   return (
-    <>
-      <PageHeading
-        title="Portfolio"
-        bgSrc="images/portfolio_hero_bg.jpeg"
-        pageLinkText="Portfolio"
-      />
-      <Spacing lg="145" md="80" />
-      <Div className="container">
-        <Div className="cs-portfolio_1_heading">
-          <SectionHeading title="Some recent work" subtitle="Our Portfolio" />
-          <Div className="cs-filter_menu cs-style1">
-            <ul className="cs-mp0 cs-center">
-              <li className={active === 'all' ? 'active' : ''}>
-                <span onClick={() => setActive('all')}>All</span>
-              </li>
-              {categoryMenu.map((item, index) => (
-                <li
-                  className={active === item.category ? 'active' : ''}
-                  key={index}
-                >
-                  <span onClick={() => setActive(item.category)}>
-                    {item.title}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Div>
-        </Div>
-        <Spacing lg="90" md="45" />
-        <Div className="row">
-          {portfolioData.slice(0, itemShow).map((item, index) => (
-            <Div
-              className={`${index === 3 || index === 6 ? 'col-lg-8' : 'col-lg-4'
-                } ${active === 'all'
-                  ? ''
-                  : !(active === item.category)
-                    ? 'd-none'
-                    : ''
-                }`}
+    <div style={{ padding: '40px 20px', backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <h2 style={{ 
+          fontSize: '2.5rem', 
+          fontWeight: '700', 
+          color: 'white', 
+          marginBottom: '16px',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}>
+          Our Portfolio
+        </h2>
+        <p style={{ color: '#888', fontSize: '1.1rem' }}>Some recent work</p>
+      </div>
+
+      {/* Category Filter */}
+      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{ 
+          display: 'inline-flex', 
+          flexWrap: 'wrap', 
+          gap: '12px', 
+          padding: '8px',
+          backgroundColor: 'rgba(255,255,255,0.05)',
+          borderRadius: '50px',
+          border: '1px solid rgba(255,255,255,0.1)',
+        }}>
+          {categoryMenu.map((item, index) => (
+            <button
               key={index}
+              onClick={() => setActive(item.category)}
+              style={{
+                padding: '12px 24px',
+                borderRadius: '25px',
+                border: 'none',
+                backgroundColor: active === item.category 
+                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+                  : 'transparent',
+                color: active === item.category ? 'white' : '#888',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: '500',
+                transition: 'all 0.3s ease',
+                background: active === item.category 
+                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+                  : 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                if (active !== item.category) {
+                  e.target.style.color = 'white';
+                  e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (active !== item.category) {
+                  e.target.style.color = '#888';
+                  e.target.style.backgroundColor = 'transparent';
+                }
+              }}
             >
-              <Portfolio
-                title={item.title}
-                subtitle={item.subtitle}
-                href={`/portfolio/${item.id}`} // Link to the details page
-                src={item.src}
-                variant="cs-style1 cs-type1"
-              />
-
-              <Spacing lg="25" md="25" />
-            </Div>
+              {item.title}
+            </button>
           ))}
-        </Div>
+        </div>
+      </div>
 
-        <Div className="text-center">
-          {portfolioData.length <= itemShow ? (
-            ''
-          ) : (
-            <>
-              <Spacing lg="65" md="40" />
-              <span
-                className="cs-text_btn"
-                onClick={() => setItemShow(itemShow + 3)}
-              >
-                <span>Load More</span>
-                <Icon icon="bi:arrow-right" />
-              </span>
-            </>
-          )}
-        </Div>
-      </Div>
-      <Spacing lg="145" md="80" />
-      <Cta
-        title="agency@arino.com"
-        bgSrc="/images/cta_bg_2.jpeg"
-        variant="rounded-0"
-      />
-    </>
+      {/* Portfolio Grid */}
+      <div 
+        className="portfolio-grid"
+        style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '30px',
+          marginBottom: '60px',
+        }}
+      >
+        {filteredItems.slice(0, itemShow).map((item, index) => (
+          <TiltShineCard
+            key={item.id}
+            title={item.title}
+            subtitle={item.subtitle}
+            src={item.src}
+            href={`/portfolio/${item.id}`}
+            hasDetails={!!item.details}
+            onClick={() => handleCardClick(item)}
+          />
+        ))}
+      </div>
+
+      {/* CSS for responsive design */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (max-width: 768px) {
+            .portfolio-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 20px !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .portfolio-grid {
+              grid-template-columns: 1fr !important;
+              gap: 15px !important;
+            }
+          }
+        `
+      }} />
+
+      {/* Load More Button */}
+      {filteredItems.length > itemShow && (
+        <div style={{ textAlign: 'center' }}>
+          <button
+            onClick={() => setItemShow(itemShow + 3)}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '16px 32px',
+              backgroundColor: 'transparent',
+              border: '2px solid rgba(255,255,255,0.2)',
+              borderRadius: '50px',
+              color: 'white',
+              fontSize: '1rem',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+              e.target.style.borderColor = 'rgba(255,255,255,0.4)';
+              e.target.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.borderColor = 'rgba(255,255,255,0.2)';
+              e.target.style.transform = 'translateY(0px)';
+            }}
+          >
+            <span>Load More</span>
+            <Icon icon="bi:arrow-right" />
+          </button>
+        </div>
+      )}
+    </div>
   );
-}     
+}
