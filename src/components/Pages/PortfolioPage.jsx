@@ -55,7 +55,8 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
       style={{
         position: 'relative',
         width: '100%',
-        aspectRatio: '1/1',
+        aspectRatio: 'auto',
+        minHeight: '340px',
         borderRadius: '16px',
         overflow: 'hidden',
         cursor: hasDetails ? 'pointer' : 'default',
@@ -163,25 +164,21 @@ const portfolioData = [
     title: 'Syeen ',
     src: baseURL + 'WEBSITE%20PORTFOLIO/1.png',
     category: 'website_development',
-    details: {
-      description: 'Beautifully designed recipe collection with stunning visuals.'
-    },
+    // details: {
+    //   description: 'Beautifully designed recipe collection with stunning visuals.'
+    // },
   },
   {
     title: 'Syeen ',
     src: baseURL + 'WEBSITE%20PORTFOLIO/2.png',
     category: 'website_development',
-    details: {
-      description: 'Beautifully designed recipe collection with stunning visuals.'
-    },
+    
   },
   {
     title: 'Syeen ',
     src: baseURL + 'WEBSITE%20PORTFOLIO/3.png',
     category: 'website_development',
-    details: {
-      description: 'Beautifully designed recipe collection with stunning visuals.'
-    },
+    
   },
   {
     id: 4,
@@ -189,17 +186,13 @@ const portfolioData = [
 
     src: baseURL + 'WEBSITE%20PORTFOLIO/4.png',
     category: 'website_development',
-    details: {
-      description: 'Beautifully designed recipe collection with stunning visuals.'
-    },
+    
   },
   {
     title: 'Syeen ',
     src: baseURL + 'WEBSITE%20PORTFOLIO/5.png',
     category: 'website_development',
-    details: {
-      description: 'Beautifully designed recipe collection with stunning visuals.'
-    },
+    
   },
    {
     title: 'Syeen ',
@@ -638,7 +631,7 @@ export default function TiltShinePortfolio() {
   return (
     <div style={{ padding: '40px 20px', backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '20px', marginTop: '60px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '40px', marginTop: '60px' }}>
         <h2 style={{
           fontSize: '2.5rem',
           fontWeight: '700',
@@ -648,51 +641,46 @@ export default function TiltShinePortfolio() {
         }}>
           Our Portfolio
         </h2>
-        <p style={{ color: '#888', fontSize: '1.1rem' }}>Some recent work</p>
+        {/* <p style={{ color: '#888', fontSize: '1.1rem' }}>Some recent work</p> */}
       </div>
 
       {/* Category Filter */}
-      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <div style={{
-          display: 'inline-flex',
+       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <div className="filter-buttons" style={{
+          display: 'flex',
           flexWrap: 'wrap',
-          gap: '2px',
-          padding: '8px',
-          backgroundColor: 'rgba(255,255,255,0.05)',
-          borderRadius: '50px',
-          border: '1px solid rgba(255,255,255,0.1)',
+          justifyContent: 'center',
+          gap: '30px',
+          
+          margin: '0 auto',
         }}>
           {categoryMenu.map((item, index) => (
             <button
               key={index}
               onClick={() => setActive(item.category)}
+              className={`filter-btn ${active === item.category ? 'active' : ''}`}
               style={{
-                padding: '12px 24px',
-                borderRadius: '25px',
+                padding: '0',
                 border: 'none',
-
-                color: active === item.category ? 'white' : '#888',
+                backgroundColor: 'transparent',
+                color: active === item.category ? '#ff4444' : '#888',
                 cursor: 'pointer',
-                fontSize: '0.9rem',
-                fontWeight: '500',
+                fontSize: '0.95rem',
+                fontWeight: active === item.category ? '600' : '500',
                 transition: 'all 0.3s ease',
-                backgroundColor: active === item.category
-                  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
-                  : 'transparent',
-                background: active === item.category
-                  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
-                  : 'transparent',
+                position: 'relative',
+                whiteSpace: 'nowrap',
+                borderBottom: active === item.category ? '2px solid #ff4444' : 'none',
+                paddingBottom: '8px',
               }}
               onMouseEnter={(e) => {
                 if (active !== item.category) {
-                  e.target.style.color = 'white';
-                  e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                  e.target.style.color = '#ccc';
                 }
               }}
               onMouseLeave={(e) => {
                 if (active !== item.category) {
                   e.target.style.color = '#888';
-                  e.target.style.backgroundColor = 'transparent';
                 }
               }}
             >
@@ -706,7 +694,7 @@ export default function TiltShinePortfolio() {
       <div
         className="portfolio-grid"
         style={{
-          maxWidth: '1200px',
+          maxWidth: '1400px',
           margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -727,7 +715,7 @@ export default function TiltShinePortfolio() {
         ))}
       </div>
 
-      {/* CSS for responsive design */}
+     {/* Add this CSS to your existing style block */}
       <style dangerouslySetInnerHTML={{
         __html: `
           @media (max-width: 768px) {
@@ -735,11 +723,31 @@ export default function TiltShinePortfolio() {
               grid-template-columns: repeat(2, 1fr) !important;
               gap: 20px !important;
             }
+            .filter-buttons {
+              gap: 20px !important;
+            }
+            .filter-btn {
+              font-size: 0.85rem !important;
+            }
           }
-          @media (max-width: 480px) {
+          @media (max-width: 600px) {
             .portfolio-grid {
               grid-template-columns: 1fr !important;
               gap: 15px !important;
+            }
+            .filter-buttons {
+              gap: 15px !important;
+            }
+            .filter-btn {
+              font-size: 0.8rem !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .filter-buttons {
+              gap: 12px !important;
+            }
+            .filter-btn {
+              font-size: 0.75rem !important;
             }
           }
         `
