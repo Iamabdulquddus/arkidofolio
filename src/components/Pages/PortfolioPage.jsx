@@ -92,13 +92,13 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
       />
 
       {/* Gradient Overlay */}
-      <div
+      {/* <div
         style={{
           position: 'absolute',
           inset: 0,
           background: 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
         }}
-      />
+      /> */}
 
       {/* Content */}
       <div
@@ -486,6 +486,127 @@ const portfolioData = [
     src: baseURL + 'YOUTUBE%20THUMBNAILS/6.png',
     category: 'youtube_thumbnails',
   },
+  {
+    title: '',
+    src: baseURL + 'mobile/1.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/2.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/3.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/4.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/5.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/6.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/7.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/8.jpg',
+    category: 'mobile_app_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'mobile/9.jpg',
+    category: 'mobile_app_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/1.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/2.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/3.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/4.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/5.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/6.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/7.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/8.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/9.jpg',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/10.png',
+    category: 'logo_designs',
+  },
+  {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/11.png',
+    category: 'logo_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/12.png',
+    category: 'logo_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/13.png',
+    category: 'logo_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/14.jpg',
+    category: 'logo_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'LOGO%20PORTFOLIO/15.png',
+    category: 'logo_designs',
+  },
+
 ];
 
 const categoryMenu = [
