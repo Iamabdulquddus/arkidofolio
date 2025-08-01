@@ -9,19 +9,19 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
-    
+
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     setMousePosition({ x, y });
-    
+
     // Calculate tilt
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
-    
+
     cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     cardRef.current.style.setProperty('--mouse-x', `${x}px`);
     cardRef.current.style.setProperty('--mouse-y', `${y}px`);
@@ -77,20 +77,20 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
           transition: 'filter 0.3s ease',
         }}
       />
-      
+
       {/* Shine Effect */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: isHovered 
+          background: isHovered
             ? `radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.3) 0%, transparent 50%)`
             : 'transparent',
           transition: 'background 0.3s ease',
           pointerEvents: 'none',
         }}
       />
-      
+
       {/* Gradient Overlay */}
       <div
         style={{
@@ -99,7 +99,7 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
           background: 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
         }}
       />
-      
+
       {/* Content */}
       <div
         style={{
@@ -134,8 +134,8 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
         >
           <span>{subtitle}</span>
           {hasDetails && (
-            <Icon 
-              icon="bi:arrow-right" 
+            <Icon
+              icon="bi:arrow-right"
               style={{
                 transition: 'transform 0.3s ease',
                 transform: isHovered ? 'translateX(4px)' : 'translateX(0px)',
@@ -144,7 +144,7 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
           )}
         </div>
       </div>
-      
+
       {/* Border Glow */}
       <div
         style={{
@@ -152,7 +152,7 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
           inset: 0,
           borderRadius: '16px',
           border: '1px solid rgba(255,255,255,0.1)',
-          boxShadow: isHovered 
+          boxShadow: isHovered
             ? '0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
             : '0 4px 20px rgba(0,0,0,0.1)',
           transition: 'box-shadow 0.3s ease',
@@ -163,75 +163,66 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
   );
 };
 
+const baseURL = 'https://raw.githubusercontent.com/Iamabdulquddus/arkidu-images/main/';
+
 // Portfolio Data
 const portfolioData = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'Syeen ',
     subtitle: 'See Details',
-    src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/1.png',
     category: 'website_development',
-    details: { description: 'A modern e-commerce platform with seamless user experience.' },
+    details: {
+      description: 'Beautifully designed recipe collection with stunning visuals.'
+    },
   },
   {
     id: 2,
-    title: 'Mobile Banking App',
+    title: 'Syeen ',
     subtitle: 'See Details',
-    src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=400&fit=crop',
-    category: 'mobile_app_designs',
-    details: { description: 'Secure and intuitive mobile banking application design.' },
+    src: baseURL + 'WEBSITE%20PORTFOLIO/2.png',
+    category: 'website_development',
+    details: {
+      description: 'Beautifully designed recipe collection with stunning visuals.'
+    },
   },
   {
     id: 3,
-    title: 'Corporate Presentation',
-    subtitle: 'View',
-    src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=400&fit=crop',
-    category: 'presentation_designs',
+    title: 'Syeen ',
+    subtitle: 'See Details',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/3.png',
+    category: 'website_development',
+    details: {
+      description: 'Beautifully designed recipe collection with stunning visuals.'
+    },
   },
   {
     id: 4,
-    title: 'Recipe E-Book',
+    title: 'Syeen ',
     subtitle: 'See Details',
-    src: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
-    category: 'ebook_designs',
-    details: { description: 'Beautifully designed recipe collection with stunning visuals.' },
+    src: baseURL + 'WEBSITE%20PORTFOLIO/4.png',
+    category: 'website_development',
+    details: {
+      description: 'Beautifully designed recipe collection with stunning visuals.'
+    },
   },
   {
     id: 5,
-    title: 'Event Flyer',
-    subtitle: 'View',
-    src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop',
-    category: 'flyers_designs',
+    title: 'Syeen ',
+    subtitle: 'See Details',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/5.png',
+    category: 'website_development',
+    details: {
+      description: 'Beautifully designed recipe collection with stunning visuals.'
+    },
   },
   {
     id: 6,
-    title: 'Brand Identity Logo',
-    subtitle: 'See Details',
-    src: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=400&fit=crop',
-    category: 'logo_designs',
-    details: { description: 'Modern logo design that captures brand essence perfectly.' },
-  },
-  {
-    id: 7,
-    title: 'Professional Business Card',
-    subtitle: 'View',
-    src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=400&fit=crop',
-    category: 'business_card_designs',
-  },
-  {
-    id: 8,
-    title: 'Gaming Thumbnail',
-    subtitle: 'View',
-    src: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
-    category: 'youtube_thumbnails',
-  },
-  {
-    id: 9,
-    title: 'Dashboard Interface',
-    subtitle: 'See Details',
-    src: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=400&fit=crop',
-    category: 'uiux_design',
-    details: { description: 'Clean and intuitive dashboard design for data visualization.' },
+    title: '',
+    subtitle: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/1.png',
+    category: 'presentation_designs',
   },
 ];
 
@@ -264,15 +255,13 @@ export default function TiltShinePortfolio() {
   return (
     <div style={{ padding: '40px 20px', backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <h2 style={{ 
-          fontSize: '2.5rem', 
-          fontWeight: '700', 
-          color: 'white', 
+      <div style={{ textAlign: 'center', marginBottom: '20px', marginTop: '60px' }}>
+        <h2 style={{
+          fontSize: '2.5rem',
+          fontWeight: '700',
+          color: 'white',
           marginBottom: '16px',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+    
         }}>
           Our Portfolio
         </h2>
@@ -281,10 +270,10 @@ export default function TiltShinePortfolio() {
 
       {/* Category Filter */}
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <div style={{ 
-          display: 'inline-flex', 
-          flexWrap: 'wrap', 
-          gap: '12px', 
+        <div style={{
+          display: 'inline-flex',
+          flexWrap: 'wrap',
+          gap: '2px',
           padding: '8px',
           backgroundColor: 'rgba(255,255,255,0.05)',
           borderRadius: '50px',
@@ -298,17 +287,18 @@ export default function TiltShinePortfolio() {
                 padding: '12px 24px',
                 borderRadius: '25px',
                 border: 'none',
-                backgroundColor: active === item.category 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
-                  : 'transparent',
+                
                 color: active === item.category ? 'white' : '#888',
                 cursor: 'pointer',
                 fontSize: '0.9rem',
                 fontWeight: '500',
                 transition: 'all 0.3s ease',
-                background: active === item.category 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
-                  : 'transparent',
+            backgroundColor: active === item.category
+  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
+  : 'transparent',
+background: active === item.category
+  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
+  : 'transparent',
               }}
               onMouseEnter={(e) => {
                 if (active !== item.category) {
@@ -330,10 +320,10 @@ export default function TiltShinePortfolio() {
       </div>
 
       {/* Portfolio Grid */}
-      <div 
+      <div
         className="portfolio-grid"
-        style={{ 
-          maxWidth: '1200px', 
+        style={{
+          maxWidth: '1200px',
           margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
