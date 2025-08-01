@@ -133,15 +133,7 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
           }}
         >
           <span>{subtitle}</span>
-          {hasDetails && (
-            <Icon
-              icon="bi:arrow-right"
-              style={{
-                transition: 'transform 0.3s ease',
-                transform: isHovered ? 'translateX(4px)' : 'translateX(0px)',
-              }}
-            />
-          )}
+
         </div>
       </div>
 
@@ -168,9 +160,7 @@ const baseURL = 'https://raw.githubusercontent.com/Iamabdulquddus/arkidu-images/
 // Portfolio Data
 const portfolioData = [
   {
-    id: 1,
     title: 'Syeen ',
-    subtitle: 'See Details',
     src: baseURL + 'WEBSITE%20PORTFOLIO/1.png',
     category: 'website_development',
     details: {
@@ -178,9 +168,7 @@ const portfolioData = [
     },
   },
   {
-    id: 2,
     title: 'Syeen ',
-    subtitle: 'See Details',
     src: baseURL + 'WEBSITE%20PORTFOLIO/2.png',
     category: 'website_development',
     details: {
@@ -188,9 +176,7 @@ const portfolioData = [
     },
   },
   {
-    id: 3,
     title: 'Syeen ',
-    subtitle: 'See Details',
     src: baseURL + 'WEBSITE%20PORTFOLIO/3.png',
     category: 'website_development',
     details: {
@@ -200,7 +186,7 @@ const portfolioData = [
   {
     id: 4,
     title: 'Syeen ',
-    subtitle: 'See Details',
+
     src: baseURL + 'WEBSITE%20PORTFOLIO/4.png',
     category: 'website_development',
     details: {
@@ -208,21 +194,297 @@ const portfolioData = [
     },
   },
   {
-    id: 5,
     title: 'Syeen ',
-    subtitle: 'See Details',
     src: baseURL + 'WEBSITE%20PORTFOLIO/5.png',
     category: 'website_development',
     details: {
       description: 'Beautifully designed recipe collection with stunning visuals.'
     },
   },
+   {
+    title: 'Syeen ',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/6.jpg',
+    category: 'website_development',
+    
+  },
+   {
+    title: 'Syeen ',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/7.jpg',
+    category: 'website_development',
+    
+  },
+   {
+    title: 'Syeen ',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/8.jpg',
+    category: 'website_development',
+    
+  },
+   {
+    title: 'Syeen ',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/9.jpg',
+    category: 'website_development',
+    
+  },
+   {
+    title: 'Syeen ',
+    src: baseURL + 'WEBSITE%20PORTFOLIO/10.jpg',
+    category: 'website_development',
+    
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/1.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/2.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/3.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/4.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/5.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/6.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/7.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/8.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/9.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/10.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/12.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Ebook',
+    src: baseURL + 'E-Book%20PORTFOLIO%20/11.png',
+    category: 'ebook_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/1.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/2.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/3.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/4.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/5.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/6.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/7.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/8.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/9.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/10.png',
+    category: 'flyers_designs',
+  },
+   {
+    title: 'Flyer',
+    src: baseURL + 'FLYERS%20PORTFOLIO/11.png',
+    category: 'flyers_designs',
+  },
   {
-    id: 6,
     title: '',
-    subtitle: '',
     src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/1.png',
     category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/2.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/3.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/4.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/5.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/6.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/7.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/8.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/9.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/10.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/11.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/12.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/13.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/14.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/15.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/16.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/17.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/18.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/19.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/20.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/21.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'POWERPOINT%20PRESENTATION%20PORTFOLIO/22.png',
+    category: 'presentation_designs',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/1.png',
+    category: 'youtube_thumbnails',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/2.png',
+    category: 'youtube_thumbnails',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/3.png',
+    category: 'youtube_thumbnails',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/4.png',
+    category: 'youtube_thumbnails',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/5.png',
+    category: 'youtube_thumbnails',
+  },
+   {
+    title: '',
+    src: baseURL + 'YOUTUBE%20THUMBNAILS/6.png',
+    category: 'youtube_thumbnails',
   },
 ];
 
@@ -233,9 +495,9 @@ const categoryMenu = [
   { title: 'E-Book Designs', category: 'ebook_designs' },
   { title: 'Flyers Designs', category: 'flyers_designs' },
   { title: 'Logo Designs', category: 'logo_designs' },
-  { title: 'Business Card Designs', category: 'business_card_designs' },
+  // { title: 'Business Card Designs', category: 'business_card_designs' },
   { title: 'Youtube Thumbnails', category: 'youtube_thumbnails' },
-  { title: 'UIUX Design', category: 'uiux_design' },
+  // { title: 'UIUX Design', category: 'uiux_design' },
 ];
 
 // Main Portfolio Component
@@ -261,7 +523,7 @@ export default function TiltShinePortfolio() {
           fontWeight: '700',
           color: 'white',
           marginBottom: '16px',
-    
+
         }}>
           Our Portfolio
         </h2>
@@ -287,18 +549,18 @@ export default function TiltShinePortfolio() {
                 padding: '12px 24px',
                 borderRadius: '25px',
                 border: 'none',
-                
+
                 color: active === item.category ? 'white' : '#888',
                 cursor: 'pointer',
                 fontSize: '0.9rem',
                 fontWeight: '500',
                 transition: 'all 0.3s ease',
-            backgroundColor: active === item.category
-  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
-  : 'transparent',
-background: active === item.category
-  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
-  : 'transparent',
+                backgroundColor: active === item.category
+                  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
+                  : 'transparent',
+                background: active === item.category
+                  ? 'linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 100%)'
+                  : 'transparent',
               }}
               onMouseEnter={(e) => {
                 if (active !== item.category) {
