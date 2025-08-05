@@ -8,7 +8,7 @@ import Spacing from '../Spacing';
 import Team from '../Team';
 const teamData = [
   {
-    memberImage: '/images/member_1.jpeg',
+    memberImage: '/images/team/sania.jpg',
     memberName: 'Melon Bulgery',
     memberDesignation: 'Product Designer',
     memberSocial: {

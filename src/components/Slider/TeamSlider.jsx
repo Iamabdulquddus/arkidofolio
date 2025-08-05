@@ -5,7 +5,7 @@ import Div from '../Div';
 import Team from '../Team';
 const teamData = [
   {
-    memberImage: '/images/member_1.jpeg',
+    memberImage: '/images/team/sania.jpg',
     memberName: 'Sania Bilal',
     memberDesignation: 'CEO',
     memberSocial: {
@@ -16,7 +16,7 @@ const teamData = [
     },
   },
   {
-    memberImage: '/images/member_2.jpeg',
+    memberImage: '/images/team/ahsan.jpg',
     memberName: 'Ahsan Ali',
     memberDesignation: 'CTO',
     memberSocial: {
@@ -26,19 +26,8 @@ const teamData = [
       facebook: '/',
     },
   },
-  // {
-  //   memberImage: '/images/member_3.jpeg',
-  //   memberName: 'Sidra M',
-  //   memberDesignation: 'React Developer',
-  //   memberSocial: {
-  //     linkedin: '/',
-  //     twitter: '/',
-  //     youtube: '/',
-  //     facebook: '/',
-  //   },
-  // },
   {
-    memberImage: '/images/member_4.jpeg',
+    memberImage: '/images/team/abdul.jpeg',
     memberName: 'Abdul Quddus',
     memberDesignation: 'Product Manager',
     memberSocial: {
@@ -48,17 +37,7 @@ const teamData = [
       facebook: '/',
     },
   },
-  // {
-  //   memberImage: '/images/member_1.jpeg',
-  //   memberName: 'Melon Bulgery',
-  //   memberDesignation: 'Product Designer',
-  //   memberSocial: {
-  //     linkedin: '/',
-  //     twitter: '/',
-  //     youtube: '/',
-  //     facebook: '/',
-  //   },
-  // },
+
 ];
 
 export default function TeamSlider() {

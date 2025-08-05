@@ -15,6 +15,9 @@ import TeamSlider from '../Slider/TeamSlider';
 import VideoModal from '../VideoModal';
 import TimelineSlider from '../Slider/TimelineSlider';
 import { pageTitle } from '../../helper';
+
+import portfolioData from './portfolioData.jsx';
+
 // Hero Social Links
 const heroSocialLinks = [
   {
@@ -46,32 +49,32 @@ const funfaceData = [
     factNumber: '550',
   },
 ];
-const portfolioData = [
-  {
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_1.jpeg',
-  },
-  {
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_2.jpeg',
-  },
-  {
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_0.jpg',
-  },
-  {
-    title: 'Colorful Art Work',
-    subtitle: 'See Details',
-    href: '/portfolio/portfolio-details',
-    src: '/images/portfolio_3.jpeg',
-  },
-];
+// const portfolioData = [
+//   {
+//     title: 'Colorful Art Work',
+//     subtitle: 'See Details',
+//     href: '/portfolio/portfolio-details',
+//     src: '/images/portfolio_1.jpeg',
+//   },
+//   {
+//     title: 'Colorful Art Work',
+//     subtitle: 'See Details',
+//     href: '/portfolio/portfolio-details',
+//     src: '/images/portfolio_2.jpeg',
+//   },
+//   {
+//     title: 'Colorful Art Work',
+//     subtitle: 'See Details',
+//     href: '/portfolio/portfolio-details',
+//     src: '/images/portfolio_0.jpg',
+//   },
+//   {
+//     title: 'Colorful Art Work',
+//     subtitle: 'See Details',
+//     href: '/portfolio/portfolio-details',
+//     src: '/images/portfolio_3.jpeg',
+//   },
+// ];
 
 export default function Home() {
   pageTitle('Home');
