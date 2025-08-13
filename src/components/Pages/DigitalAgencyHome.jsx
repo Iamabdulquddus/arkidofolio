@@ -20,7 +20,7 @@ import portfolioData from './portfolioData.jsx';
 const heroSocialLinks = [
   {
     name: 'LinkedIn',
-    links: '/',
+    links: 'https://www.linkedin.com/company/arkidu/',
   },
   {
     name: 'Instagram',
@@ -283,7 +283,7 @@ export default function DigitalAgencyHome() {
         scrollDownId="#service"
         socialLinksHeading="Follow Us"
         heroSocialLinks={heroSocialLinks}
-        phoneNumber="+923364223371"
+        phoneNumber="+92 343 8686 142"
         email="info@arkidu.com"
       />
       {/* End Hero Section */}

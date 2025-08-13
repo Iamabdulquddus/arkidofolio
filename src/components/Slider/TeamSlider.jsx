@@ -9,10 +9,8 @@ const teamData = [
     memberName: 'Sania Bilal',
     memberDesignation: 'CEO',
     memberSocial: {
-      linkedin: '/',
-      twitter: '/',
-      youtube: '/',
-      facebook: '/',
+      linkedin: 'https://www.linkedin.com/in/sania-bilal-3b41a6247/',
+      
     },
   },
   {
@@ -20,10 +18,8 @@ const teamData = [
     memberName: 'Ahsan Ali',
     memberDesignation: 'CTO',
     memberSocial: {
-      linkedin: '/',
-      twitter: '/',
-      youtube: '/',
-      facebook: '/',
+      linkedin: 'https://www.linkedin.com/in/abdulquddus7782/',
+      
     },
   },
   {
@@ -31,10 +27,8 @@ const teamData = [
     memberName: 'Abdul Quddus',
     memberDesignation: 'Product Manager',
     memberSocial: {
-      linkedin: '/',
-      twitter: '/',
-      youtube: '/',
-      facebook: '/',
+      linkedin: 'https://www.linkedin.com/in/muhammadahsanali-/',
+      
     },
   },
 

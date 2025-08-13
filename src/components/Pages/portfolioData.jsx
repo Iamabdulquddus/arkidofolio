@@ -11,7 +11,7 @@ const portfolioData = [
     // },
   },
   {
-    title: 'Syeen ',
+    title: 'Brand Social',
     src: baseURL + 'WEBSITE%20PORTFOLIO/2.png',
     category: 'website_development',
     
