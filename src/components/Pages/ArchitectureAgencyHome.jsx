@@ -62,7 +62,7 @@ export default function ArchitectureAgencyHome() {
   return (
     <>
       <Hero9
-        title="Arino Wheres Vision Meets Structure."
+        title="Arkidu Wheres Vision Meets Structure."
         subtitle="We deliver best problem solving solution for our client and provide finest <br /> finishing product in present and upcoming future."
         btnLink="/about"
         btnText="Load More"
