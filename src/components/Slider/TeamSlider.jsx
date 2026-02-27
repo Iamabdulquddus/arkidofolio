@@ -31,6 +31,15 @@ const teamData = [
       
     },
   },
+  {
+    memberImage: '/images/team/ayesha.png',
+    memberName: 'Aysha Summan',
+    memberDesignation: 'Graphic Designer',
+    memberSocial: {
+      linkedin: '/',
+      
+    },
+  },
 
 ];
 
