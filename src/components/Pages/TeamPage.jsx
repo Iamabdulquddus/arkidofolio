@@ -8,6 +8,17 @@ import Spacing from '../Spacing';
 import Team from '../Team';
 const teamData = [
   {
+    memberImage: '/images/team/ayesha.png',
+    memberName: 'Aysha Summan',
+    memberDesignation: 'Graphic Designer',
+    memberSocial: {
+      linkedin: '/',
+      twitter: '/',
+      youtube: '/',
+      facebook: '/',
+    },
+  },
+  {
     memberImage: '/images/team/sania.jpg',
     memberName: 'Melon Bulgery',
     memberDesignation: 'Product Designer',
