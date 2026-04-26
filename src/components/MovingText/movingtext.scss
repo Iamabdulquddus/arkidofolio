@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-moving_text_wrap {
   font-family: helvetica;
   overflow: hidden;

@@ -1,4 +1,4 @@
-@import "../../scss/default/color_variable";
+@use "../../scss/default/color_variable" as *;
 .cs-post_wrap {
   width: 54vw;
 }

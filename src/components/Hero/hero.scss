@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 
 .cs-hero_social_wrap {
   display: flex;

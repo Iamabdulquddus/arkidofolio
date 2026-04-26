@@ -1,4 +1,4 @@
-@import "../../scss/default/color_variable";
+@use "../../scss/default/color_variable" as *;
 .cs-pricing_table.cs-style1 {
   position: relative;
   background: linear-gradient(267.18deg, #161616 0%, #080808 100%);

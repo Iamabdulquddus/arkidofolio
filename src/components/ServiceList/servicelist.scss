@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-iconbox_3_list {
   position: relative;
   padding-left: 550px;

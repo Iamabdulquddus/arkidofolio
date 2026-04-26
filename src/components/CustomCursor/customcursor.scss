@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-cursor_lg,
 .cs-cursor_sm {
   position: fixed;

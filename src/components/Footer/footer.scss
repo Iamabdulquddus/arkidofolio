@@ -1,4 +1,4 @@
-@import "../../scss/default/color_variable";
+@use "../../scss/default/color_variable" as *;
 .cs-fooer_main {
   padding: 95px 0 35px;
 }

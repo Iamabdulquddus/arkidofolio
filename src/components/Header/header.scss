@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-site_header {
   position: relative;
   z-index: 101;

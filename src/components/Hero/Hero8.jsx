@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VerticalLinks from '../VerticalLinks';
+import Div from '../Div';
 import parse from 'html-react-parser';
 
 export default function Hero8({
@@ -20,6 +21,11 @@ export default function Hero8({
       style={{ backgroundImage: `url(${bgImageUrl})` }}
       id="home"
     >
+      <Div className="cs-shape_1" />
+      <Div className="cs-shape_1" />
+      <Div className="cs-shape_1" />
+      <Div className="cs-circle_1" />
+      <Div className="cs-circle_2" />
       <div className="container">
         <div className="cs-hero_text">
           <h1 className="cs-hero_title">{parse(title)}</h1>

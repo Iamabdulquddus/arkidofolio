@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-testimonial.cs-style1 {
   position: relative;
   padding-left: 70px;

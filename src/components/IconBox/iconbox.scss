@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-iconbox.cs-style1 {
   max-width: 350px;
   margin: auto;

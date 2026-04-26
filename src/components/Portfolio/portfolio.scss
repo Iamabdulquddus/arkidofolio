@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-portfolio_1_heading {
   display: flex;
   flex-wrap: wrap;

@@ -1,4 +1,4 @@
-@import "../../scss/default/color_variable";
+@use "../../scss/default/color_variable" as *;
 
 .cs-team.cs-style1 {
   overflow: hidden;

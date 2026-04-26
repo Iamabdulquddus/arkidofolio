@@ -1,4 +1,4 @@
-@import '../../scss/default/color_variable';
+@use '../../scss/default/color_variable' as *;
 .cs-cta.cs-style1 {
   padding: 90px 30px;
   border-radius: 15px;

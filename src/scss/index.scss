@@ -1,7 +1,8 @@
-@import "default/color_variable";
-@import "default/typography";
-@import "common/general";
-@import "common/slider";
-@import "common/video-modal";
-@import "common/sidebar";
+@use "default/typography";
+@use "common/general";
+@use "common/slider";
+@use "common/video-modal";
+@use "common/sidebar";
+// Hero variants (Hero4, Hero8, etc.) do not import this file; load once globally.
+@use "../components/Hero/hero";
 
