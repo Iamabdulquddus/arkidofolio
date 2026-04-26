@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import { Icon } from '@iconify/react';
 import Testimonial from '../Testimonial';
@@ -56,9 +56,6 @@ const testimonialData = [
 ];
 
 export default function TestimonialSlider() {
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
-
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div
       {...props}
@@ -117,8 +114,6 @@ export default function TestimonialSlider() {
             </Div> */}
             <Div >
               <Slider
-                asNavFor={nav2}
-                ref={slider1 => setNav1(slider1)}
                 prevArrow={<SlickArrowLeft />}
                 nextArrow={<SlickArrowRight />}
                 className="cs-arrow_style1"

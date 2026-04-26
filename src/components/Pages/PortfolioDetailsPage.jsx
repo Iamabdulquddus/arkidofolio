@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { pageTitle } from '../../helper';
-import Button from '../Button';
 import Cta from '../Cta';
 import PageHeading from '../PageHeading';
 import Div from '../Div';

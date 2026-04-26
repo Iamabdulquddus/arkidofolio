@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Icon } from '@iconify/react';
 import portfolioData from './portfolioData.jsx';
 
 // Tilt Shine Card Component
 const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
   const cardRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
@@ -14,8 +13,6 @@ const TiltShineCard = ({ title, subtitle, src, href, hasDetails, onClick }) => {
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
-    setMousePosition({ x, y });
 
     // Calculate tilt
     const centerX = rect.width / 2;

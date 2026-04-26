@@ -2,20 +2,9 @@ import React from 'react';
 import Div from '../Div';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import MenuWidget from '../Widget/MenuWidget';
-import Newsletter from '../Widget/Newsletter';
 import SocialWidget from '../Widget/SocialWidget';
 import TextWidget from '../Widget/TextWidget';
 import './footer.scss';
-const copyrightLinks = [
-  {
-    title: 'Terms of Use',
-    href: '/',
-  },
-  {
-    title: 'Privacy Policy',
-    href: '/',
-  },
-];
 
 const serviceMenu = [
   {
